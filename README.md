@@ -44,7 +44,6 @@
    - Target & metrik realistis.  
    - Risiko: data tipis, cold-start, minim variabel eksternal → sudah ada strategi mitigasi.
 
----
 
 ##  Metodologi
 
