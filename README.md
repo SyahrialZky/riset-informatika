@@ -136,6 +136,11 @@ Penelitian ini memberikan nilai tambah dengan tiga aspek utama:
 
 ---
 
+### 2.5 Kerangka Berpikir (Mind Map)
+Hybrid Model ARIMA - XGBoost
+<img width="3619" height="995" alt="Hybrid Model_ ARIMA-XGBoost" src="https://github.com/user-attachments/assets/433037d3-2d35-41f9-beab-7c71ee8cfff0" />
+
+
 ##  Bab III — Methodology (Rencana Pengembangan)
 
 Bab ini menjelaskan **prosedur rinci dan justifikasi ilmiah (metodologi)** yang digunakan untuk mencapai tujuan penelitian, yaitu membuktikan efektivitas model **Hybrid ARIMA–XGBoost** pada data permintaan kategori menu kedai kopi.
