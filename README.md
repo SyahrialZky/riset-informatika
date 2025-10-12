@@ -251,8 +251,9 @@ Model dengan nilai **RMSE & MAPE terendah** dianggap memberikan hasil prediksi p
 7. Interpretasikan hasil dan validasi keunggulan model hibrida.
 
 ---
+<!--
 
-\`### 3.4 Visualisasi Rencana Proses (Konseptual)
+### 3.4 Visualisasi Rencana Proses (Konseptual)
 ```mermaid
 flowchart TD
 A[Raw Data Transaksi] --> B[Data Preprocessing]
@@ -261,7 +262,8 @@ C --> D[Residual Extraction]
 D --> E[XGBoost Model (Non-Linier Component)]
 E --> F[Hybrid Model (L + N)]
 F --> G[Evaluation (RMSE, MAPE)]
-`
+
+-->
 ---
 
 ## ⚙️ Tools & Dataset
