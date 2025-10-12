@@ -261,7 +261,7 @@ Model dengan nilai **RMSE & MAPE terendah** dianggap memberikan hasil prediksi p
 
 ### 3.4 Visualisasi Rencana Proses (Konseptual Flowchart)
 
-<img width="1012" height="1598" alt="image" src="https://github.com/user-attachments/assets/d627c427-8fd3-4f0c-8199-910607de6da1" />
+<img width="500" height="800" alt="image" src="https://github.com/user-attachments/assets/d627c427-8fd3-4f0c-8199-910607de6da1" />
 
 
 ## ⚙️ Tools & Dataset
