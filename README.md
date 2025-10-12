@@ -1,6 +1,6 @@
-# ☕ Implementasi Model Hibrida ARIMA–XGBOOST untuk Peramalan Permintaan Kategori Menu pada Data Transaksi Kedai Kopi
+#  Implementasi Model Hibrida ARIMA–XGBOOST untuk Peramalan Permintaan Kategori Menu pada Data Transaksi Kedai Kopi
 
-## 📘 Deskripsi Umum
+##  Deskripsi Umum
 Repositori ini merupakan bagian dari **penyusunan Proposal Skripsi** untuk mata kuliah **Riset Informatika**.  
 Penelitian ini berfokus pada penerapan **model hibrida ARIMA–XGBoost** dalam **peramalan permintaan (demand forecasting)** pada **kategori menu kedai kopi (F&B Industry)**, yang bersifat *volatile* dan sensitif terhadap tren musiman maupun sosial.
 
@@ -11,7 +11,7 @@ Struktur penyusunan proposal mengikuti tiga bab utama:
 
 ---
 
-## 🧩 Bab I — Research Problem Formulation
+##  Bab I — Research Problem Formulation
 
 Bab ini membedah proses konseptual awal penelitian menggunakan tujuh langkah logis yang menjadi dasar formulasi masalah penelitian.
 
@@ -68,7 +68,7 @@ Pemilihan metode hibrida menjadi solusi ideal untuk mengatasi permasalahan **vol
 
 ---
 
-## 🌉 Bab II — Gap Research Analysis (Analisis Celah Penelitian)
+##  Bab II — Gap Research Analysis (Analisis Celah Penelitian)
 
 Bab ini berfungsi untuk menjustifikasi **pemilihan Model Hibrida ARIMA–XGBoost** sebagai solusi terbaik dengan membandingkan kekuatan dan kelemahan model tunggal yang ada dalam literatur ilmiah.
 
@@ -136,17 +136,131 @@ Penelitian ini memberikan nilai tambah dengan tiga aspek utama:
 
 ---
 
-## 🧭 Bab III — Methodology (Rencana Pengembangan)
+##  Bab III — Methodology (Rencana Pengembangan)
 
-Bab III akan menjelaskan **kerangka metodologi teknis**, mencakup:
-- **Dataset:** Coffee Shop Sales (Kaggle) atau data transaksi kedai kopi aktual.  
-- **Preprocessing:** pembersihan data, normalisasi, dan transformasi log.  
-- **Feature Engineering:** pembuatan fitur waktu (hari, bulan, musim, promosi, tren).  
-- **Modeling Steps:**  
-  1. Penerapan ARIMA untuk menangkap pola linier.  
-  2. Penerapan XGBoost terhadap residual ARIMA untuk pola non-linier.  
-  3. Evaluasi gabungan menggunakan metrik RMSE & MAPE.  
-- **Tools:** Python, Google Colab, `pandas`, `numpy`, `statsmodels`, `xgboost`, `scikit-learn`, `matplotlib`.
+Bab ini menjelaskan **prosedur rinci dan justifikasi ilmiah (metodologi)** yang digunakan untuk mencapai tujuan penelitian, yaitu membuktikan efektivitas model **Hybrid ARIMA–XGBoost** pada data permintaan kategori menu kedai kopi.
+
+---
+
+### 3.1 Metodologi Penelitian (Methodology)
+
+Metodologi penelitian yang digunakan adalah **Analisis Kuantitatif Eksperimental** dengan pendekatan **Additive Hybrid Modeling Approach (Pendekatan Model Hibrida Aditif)**.
+
+#### 3.1.1 Pendekatan Hibrida Additive (Metodologi Kunci)
+Pendekatan ini didasarkan pada asumsi bahwa sinyal permintaan \( Y_t \) dapat dipisahkan menjadi dua komponen utama:
+
+\[
+Y_t = L_t + N_t
+\]
+
+di mana:
+- \( L_t \): komponen **linier** (dimodelkan dengan ARIMA)
+- \( N_t \): komponen **non-linier** (dimodelkan dengan XGBoost)
+- \( e_t \): residual dari model ARIMA yang berperan sebagai perwakilan komponen non-linier.
+
+Dengan demikian, model XGBoost akan mempelajari pola dari residual \( e_t \) untuk memperbaiki prediksi akhir.
+
+#### 3.1.2 Desain Eksperimen
+Penelitian ini akan membandingkan **tiga model peramalan** secara paralel pada dataset yang sama untuk membuktikan superioritas pendekatan hibrida:
+
+| Jenis Model | Deskripsi | Tujuan |
+|--------------|------------|---------|
+| **Model Baseline** | ARIMA tunggal (model linier klasik) | Menjadi pembanding utama |
+| **Model Pesaing** | XGBoost tunggal dengan fitur waktu dan lag | Menangkap hubungan non-linier |
+| **Model Usulan** | Hibrida ARIMA–XGBoost | Kombinasi linier + non-linier untuk prediksi lebih akurat |
+
+---
+
+### 3.2 Metode Penelitian (Method)
+
+Bagian ini menjelaskan **langkah-langkah teknis** yang digunakan dalam pelaksanaan eksperimen sesuai dengan kerangka berpikir yang dirancang pada Bab I dan II.
+
+---
+
+#### 3.2.1 Sumber Data
+- **Dataset:** Coffee Shop Sales (Simulasi Kaggle)
+- **Variabel Target:** Kuantitas permintaan harian (\( Q_t \)) per **kategori menu (\( C_i \))**
+- **Pembagian Data:** Time-based splitting (80% data latih, 20% data uji)
+
+---
+
+#### 3.2.2 Tahap Pra-Pemrosesan (Data Preprocessing)
+1. **Agregasi Data:**  
+   Mengubah transaksi mentah menjadi **deret waktu harian** untuk setiap kategori menu (mis. `Permintaan_Kopi`, `Permintaan_Pastry`).
+2. **Penanganan Missing Value:**  
+   Mengisi nilai kosong dengan **0** untuk hari tanpa transaksi.
+3. **Uji Stasioneritas (ADF Test):**  
+   Menentukan parameter \( d \) (differencing) pada model ARIMA agar data menjadi stasioner tanpa kehilangan tren penting.
+
+---
+
+#### 3.2.3 Tahap Rekayasa Fitur (Feature Engineering)
+Tahapan ini sangat penting untuk meningkatkan kinerja model **XGBoost** baik dalam mode tunggal maupun hibrida.
+
+| Jenis Fitur | Deskripsi |
+|--------------|------------|
+| **Fitur Waktu** | Variabel dummy seperti `Hari_dalam_Minggu`, `Bulan`, `Hari_Libur` |
+| **Lagged Features** | `Permintaan_H-1`, `Permintaan_H-7` untuk menangkap pola musiman |
+| **Fitur Proxy Eksternal (Opsional)** | Representasi faktor eksternal seperti `diskon besar`, `event`, atau `tren viral` (jika tersedia di dataset) |
+
+---
+
+#### 3.2.4 Prosedur Pemodelan Hibrida ARIMA–XGBoost
+
+##### Langkah 1: Pemodelan Linier (ARIMA)
+- Menentukan parameter \( p, d, q \) menggunakan **ACF/PACF Plot** atau `auto_arima()`.  
+- Melatih model ARIMA pada data latih \( Y_{train} \).  
+- Menghasilkan prediksi linier \( \hat{L_t} \) dan menghitung **residual \( e_t = Y_t - \hat{L_t} \)**.
+
+##### Langkah 2: Pemodelan Non-Linier (XGBoost)
+- Menetapkan **residual \( e_t \)** sebagai target baru.  
+- Melatih **XGBoost Regressor** menggunakan residual \( e_t \) dan fitur tambahan dari tahap *feature engineering*.  
+- Menghasilkan prediksi non-linier \( \hat{N_t} \).
+
+##### Langkah 3: Final Forecast
+Menggabungkan hasil prediksi kedua model:
+\[
+\hat{Y_t} = \hat{L_t} + \hat{N_t}
+\]
+
+Sehingga hasil akhir mengandung kontribusi dari **komponen linier (ARIMA)** dan **non-linier (XGBoost)** secara aditif.
+
+---
+
+#### 3.2.5 Evaluasi Kinerja (Performance Metrics)
+
+Dua metrik utama digunakan untuk mengevaluasi performa tiap model:
+
+| Metrik | Formula | Interpretasi |
+|---------|----------|---------------|
+| **Root Mean Squared Error (RMSE)** | \(\sqrt{\frac{1}{n}\sum{(y_t - \hat{y_t})^2}}\) | Mengukur rata-rata kesalahan absolut kuadrat (sensitif terhadap outlier) |
+| **Mean Absolute Percentage Error (MAPE)** | \(\frac{100\%}{n}\sum\left|\frac{y_t - \hat{y_t}}{y_t}\right|\) | Mengukur akurasi dalam persen, sangat relevan untuk analisis bisnis |
+
+Model dengan nilai **RMSE & MAPE terendah** dianggap memberikan hasil prediksi paling akurat.
+
+---
+
+### 3.3 Ringkasan Alur Eksperimen
+
+1. Import dan pra-pemrosesan data.  
+2. Uji stasioneritas dan transformasi deret waktu.  
+3. Bangun model baseline (ARIMA) → hasilkan residual.  
+4. Lakukan feature engineering → bangun model XGBoost.  
+5. Kombinasikan hasil ARIMA + XGBoost menjadi model hibrida.  
+6. Evaluasi ketiga model menggunakan RMSE dan MAPE.  
+7. Interpretasikan hasil dan validasi keunggulan model hibrida.
+
+---
+
+### 3.4 Visualisasi Rencana Proses (Konseptual)
+```mermaid
+flowchart TD
+A[Raw Data Transaksi] --> B[Data Preprocessing]
+B --> C[ARIMA Model (Linier Component)]
+C --> D[Residual Extraction]
+D --> E[XGBoost Model (Non-Linier Component)]
+E --> F[Hybrid Model (L + N)]
+F --> G[Evaluation (RMSE, MAPE)]
 
 ---
 
