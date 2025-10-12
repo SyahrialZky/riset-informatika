@@ -251,9 +251,11 @@ Model dengan nilai **RMSE & MAPE terendah** dianggap memberikan hasil prediksi p
 7. Interpretasikan hasil dan validasi keunggulan model hibrida.
 
 ---
-<pre><code>
+
 
 ### 3.4 Visualisasi Rencana Proses (Konseptual)
+
+<pre><code>
 ```mermaid
 flowchart TD
 A[Raw Data Transaksi] --> B[Data Preprocessing]
@@ -277,7 +279,7 @@ F --> G[Evaluation (RMSE, MAPE)]
 - **Mata Kuliah:** Riset Informatika  
 - **Program Studi:** Informatika, UPN Veteran Jawa Timur  
 - **Penulis:** *Syahrial Rizky*  
-- **Status:** *Proposal Skripsi – Bab I & Bab II (Research Problem + Gap Analysis)*
+- **Status:** *Draft - Proposal *
 
 ---
 
