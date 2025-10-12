@@ -259,20 +259,10 @@ Model dengan nilai **RMSE & MAPE terendah** dianggap memberikan hasil prediksi p
 ---
 
 
-### 3.4 Visualisasi Rencana Proses (Konseptual)
+### 3.4 Visualisasi Rencana Proses (Konseptual Flowchart)
 
-<pre><code>
-```mermaid
-flowchart TD
-A[Raw Data Transaksi] --> B[Data Preprocessing]
-B --> C[ARIMA Model (Linier Component)]
-C --> D[Residual Extraction]
-D --> E[XGBoost Model (Non-Linier Component)]
-E --> F[Hybrid Model (L + N)]
-F --> G[Evaluation (RMSE, MAPE)]
+<img width="1012" height="1598" alt="image" src="https://github.com/user-attachments/assets/d627c427-8fd3-4f0c-8199-910607de6da1" />
 
-</code></pre>
----
 
 ## ⚙️ Tools & Dataset
 - **Dataset:** [Coffee Shop Sales – Kaggle (Simulasi)](https://www.kaggle.com/code/ahmedabbas757/coffee-shop-sales)  
