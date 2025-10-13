@@ -126,11 +126,11 @@ Penelitian ini memberikan nilai tambah dengan tiga aspek utama:
 ### 2.4 Referensi Kunci (Format IEEE)
 | No | Referensi | Dukungan |
 |----|------------|-----------|
-| [3] | Box & Jenkins, *Time Series Analysis: Forecasting and Control*, 1970 | Fondasi teori ARIMA (model linier) |
-| [4] | Chen & Guestrin, *XGBoost: A Scalable Tree Boosting System*, 2016 | Keunggulan XGBoost dalam data non-linier |
-| [5] | Zhang, *Time Series Forecasting Using a Hybrid ARIMA and Neural Network Model*, 2003 | Teori dasar model hibrida (residual mengandung struktur non-linier) |
-| [6] | Wang et al., 2020 | Aplikasi Hibrida ARIMA–XGBoost pada data energi |
-| [7] | Kim & Lee, 2021 | Aplikasi Hibrida ARIMA–XGBoost pada data transportasi & volatilitas |
+| [1] | Box & Jenkins, *Time Series Analysis: Forecasting and Control*, 1970 | Fondasi teori ARIMA (model linier) |
+| [2] | Chen & Guestrin, *XGBoost: A Scalable Tree Boosting System*, 2016 | Keunggulan XGBoost dalam data non-linier |
+| [3] | Zhang, *Time Series Forecasting Using a Hybrid ARIMA and Neural Network Model*, 2003 | Teori dasar model hibrida (residual mengandung struktur non-linier) |
+| [4] | Wang et al., 2020 | Aplikasi Hibrida ARIMA–XGBoost pada data energi |
+| [5] | Kim & Lee, 2021 | Aplikasi Hibrida ARIMA–XGBoost pada data transportasi & volatilitas |
 
 > Catatan: Referensi [6]–[7] menunjukkan bahwa metode hibrida telah teruji di domain lain, memperkuat validitas pemilihannya untuk sektor F&B.
 
