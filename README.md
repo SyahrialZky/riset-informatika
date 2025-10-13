@@ -79,8 +79,8 @@ Bab ini berfungsi untuk menjustifikasi **pemilihan Model Hibrida ARIMA–XGBoost
 #### 🔹 A. Model Linier (ARIMA)
 | Aspek | Penjelasan |
 |-------|-------------|
-| **Kekuatan** ([3]) | - Koefisien model mudah dijelaskan (*interpretable*).<br>- Fondasi teori kuat untuk memodelkan autocorrelation dan pola musiman dasar. |
-| **Kelemahan** ([5]) | - Asumsi linieritas tidak dapat menangkap hubungan non-linier dan *outlier* kompleks.<br>- Sensitif terhadap stasioneritas; proses differencing dapat menghilangkan tren penting. |
+| **Kekuatan** ([1]) | - Koefisien model mudah dijelaskan (*interpretable*).<br>- Fondasi teori kuat untuk memodelkan autocorrelation dan pola musiman dasar. |
+| **Kelemahan** ([3]) | - Asumsi linieritas tidak dapat menangkap hubungan non-linier dan *outlier* kompleks.<br>- Sensitif terhadap stasioneritas; proses differencing dapat menghilangkan tren penting. |
 | **Celah Penelitian** | Gagal memproses lonjakan permintaan akibat **viral marketing** atau **event mendadak** yang umum terjadi di F&B. |
 
 ---
@@ -88,8 +88,8 @@ Bab ini berfungsi untuk menjustifikasi **pemilihan Model Hibrida ARIMA–XGBoost
 #### 🔹 B. Model Non-Linier (XGBoost / ML Lain)
 | Aspek | Penjelasan |
 |-------|-------------|
-| **Kekuatan** ([4]) | - Akurasi tinggi & robust terhadap data non-linier.<br>- Dapat mengintegrasikan variabel eksternal seperti cuaca, promosi, atau aktivitas media sosial. |
-| **Kelemahan** ([5], [7]) | - Sangat bergantung pada *feature engineering* yang tepat.<br>- Tidak secara eksplisit memodelkan struktur deret waktu (kurang optimal untuk *time dependence*). |
+| **Kekuatan** ([2]) | - Akurasi tinggi & robust terhadap data non-linier.<br>- Dapat mengintegrasikan variabel eksternal seperti cuaca, promosi, atau aktivitas media sosial. |
+| **Kelemahan** ([3], [5]) | - Sangat bergantung pada *feature engineering* yang tepat.<br>- Tidak secara eksplisit memodelkan struktur deret waktu (kurang optimal untuk *time dependence*). |
 | **Celah Penelitian** | Kehilangan **long-term memory** yang dapat ditangkap oleh ARIMA. |
 
 ---
@@ -105,7 +105,7 @@ Dari hasil tinjauan, **tidak ada model tunggal** yang mampu mengelola **komponen
 
 **Justifikasi Metodologis:**  
 Model Hibrida hadir untuk menjembatani celah ini.  
-Menurut Zhang (2003) [5], residual dari model linier (ARIMA) masih mengandung struktur non-linier yang dapat dimodelkan ulang menggunakan *Machine Learning* (XGBoost). Dengan memanfaatkan residual tersebut, kombinasi **ARIMA + XGBoost** mampu mengekstraksi kedua komponen dengan optimal.
+Menurut Zhang (2003) [3], residual dari model linier (ARIMA) masih mengandung struktur non-linier yang dapat dimodelkan ulang menggunakan *Machine Learning* (XGBoost). Dengan memanfaatkan residual tersebut, kombinasi **ARIMA + XGBoost** mampu mengekstraksi kedua komponen dengan optimal.
 
 ---
 
