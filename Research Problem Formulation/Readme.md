@@ -17,7 +17,7 @@ Industri ritel dan F&B menghadapi tekanan tinggi untuk:
 - Meningkatkan **kecepatan layanan**, dan  
 - Memastikan **konsistensi produk** melalui *supply chain optimization*.
 
-<img width="3800" height="3800" alt="image" src="https://github.com/user-attachments/assets/8228eb74-fb16-43ba-89e8-46baea70526d" />
+<img width="3200" height="3200" alt="image" src="https://github.com/user-attachments/assets/8228eb74-fb16-43ba-89e8-46baea70526d" />
 
 
 **Pemikiran Awal:**  
