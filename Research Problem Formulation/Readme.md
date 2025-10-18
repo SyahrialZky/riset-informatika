@@ -45,7 +45,7 @@ Artinya, **model tunggal tidak cukup** untuk menggambarkan dinamika kompleks ter
 
 ## 3. Select Interested Sub-Area (Area yang Diminati)
 Titik fokus penelitian berada pada perpotongan antara:
-> **Advanced Time Series Forecasting** dan **Hybrid Modeling**
+> **Time Series Forecasting** dan **Hybrid Modeling**
 
 ### Kebutuhan Aktual
 Diperlukan model yang:
