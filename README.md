@@ -1,4 +1,4 @@
-# ☕ Analisis Komparatif Model Hibrida untuk Peramalan Permintaan F&B
+# Analisis Komparatif Model ARIMA, XGBOOST, dan Model Hibrida ARIMA–XGBOOST untuk Peramalan Permintaan Kategori Menu pada Data Transaksi Kedai Kopi
 
 ## 🧾 Informasi Umum
 **Judul Penelitian:**  
