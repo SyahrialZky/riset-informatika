@@ -1,4 +1,4 @@
-#  Implementasi Model Hibrida ARIMA–XGBOOST untuk Peramalan Permintaan Kategori Menu pada Data Transaksi Kedai Kopi
+#  Analisis Komparatif Model ARIMA, XGBOOST, dan Model Hibrida ARIMA–XGBOOST untuk Peramalan Permintaan Kategori Menu pada Data Transaksi Kedai Kopi
 
 ##  Deskripsi Umum
 Repositori ini merupakan bagian dari **penyusunan Proposal Skripsi** untuk mata kuliah **Riset Informatika**.  
