@@ -96,7 +96,7 @@ Evaluasi awal dilakukan untuk memastikan penelitian **layak (feasible)** dan **r
 | Aspek | Status | Keterangan |
 |--------|---------|------------|
 | **Feasible** | ✅ | Dataset transaksi tersedia di Kaggle; library seperti *Pandas*, *Statsmodels*, dan *XGBoost* dapat diakses di Google Colab. |
-| **Relevant** | ✅ | Sejalan dengan tantangan operasional F&B dan standar *Advanced Time Series Forecasting*. |
+| **Relevant** | ✅ | Sejalan dengan tantangan operasional F&B dan standar *Time Series Forecasting*. |
 | **Significant** | ✅ | Menyediakan bukti akademik dan pendekatan presisi untuk mendukung *Just-in-Time Production* dan peningkatan *Quality of Service*. |
 
 ---
@@ -117,7 +117,7 @@ Langkah validasi dilakukan untuk memastikan keselarasan seluruh elemen proposal.
 |--------|--------|---------------|
 | **Identify Broad Field** | Data Science, AI, Supply Chain | Area riset utama: peramalan permintaan |
 | **Dissect Sub-Area** | F&B Analytics, Hybrid Forecasting | Masalah: volatilitas permintaan |
-| **Select Sub-Area** | Advanced Hybrid Time Series | Solusi: Model ARIMA–XGBoost |
+| **Select Sub-Area** | Hybrid Time Series | Solusi: Model ARIMA–XGBoost |
 | **Raise Question** | Validasi metodologi | Hipotesis: model hibrida unggul |
 | **Formulate Objective** | Menetapkan arah eksperimen | Tiga tujuan penelitian |
 | **Assess Objective** | Menilai kelayakan riset | Feasible, relevan, signifikan |
