@@ -14,8 +14,8 @@ Analisis Komparatif Model **ARIMA**, **XGBoost**, dan **Model Hibrida ARIMA–XG
 Penelitian ini berangkat dari tantangan **volatilitas permintaan** pada sektor **Food & Beverage (F&B)** yang sangat dipengaruhi oleh tren media sosial dan perilaku konsumen digital.  
 
 Kegagalan peramalan yang akurat dapat menyebabkan:
-- ⚠️ **Penurunan Kualitas Layanan:** Waktu tunggu pelanggan meningkat, stok produk tidak konsisten.  
-- ⚙️ **Inefisiensi Operasional:** Hambatan pada *just-in-time production* dan alokasi sumber daya.  
+-  **Penurunan Kualitas Layanan:** Waktu tunggu pelanggan meningkat, stok produk tidak konsisten.  
+-  **Inefisiensi Operasional:** Hambatan pada *just-in-time production* dan alokasi sumber daya.  
 
 **Urgensi Metodologis:**  
 Data permintaan F&B mengandung dua jenis komponen:
